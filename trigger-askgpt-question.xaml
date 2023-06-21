@@ -3,7 +3,7 @@
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1150,1594.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,1954.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="trigger_askgpt_question" sap:VirtualizedContainerService.HintSize="496,1579.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="trigger_askgpt_question" sap:VirtualizedContainerService.HintSize="548.6666666666666,1890" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:String)" Name="questionList" />
       <Variable x:TypeArguments="x:String" Name="asktGptQuestion" />
@@ -119,8 +119,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form trigger activity" Enabled="True" Event="click.btn-submit-askgpt-question" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="a37dfc80-69dc-460a-a19b-0e96b2b0ac4a" />
-    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form trigger activity" Enabled="True" Event="click.btn-submit-askgpt-question" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="486.6666666666667,166" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="a37dfc80-69dc-460a-a19b-0e96b2b0ac4a">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ufa:FormTriggerActivity>
+    <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">
           <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">questionList</CSharpReference>
@@ -132,7 +139,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,145.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
+    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="486.6666666666667,145.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="text-askgpt-question">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">
@@ -145,7 +152,7 @@
         <InArgument x:TypeArguments="x:String" />
       </ufa:GetFormFieldsActivity.InstanceName>
     </ufa:GetFormFieldsActivity>
-    <uasc:AppendItemToCollection x:TypeArguments="x:String" DisplayName="Append items to collection" sap:VirtualizedContainerService.HintSize="434,145.33333333333334" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
+    <uasc:AppendItemToCollection x:TypeArguments="x:String" DisplayName="Append items to collection" sap:VirtualizedContainerService.HintSize="486.6666666666667,145.33333333333334" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
       <uasc:AppendItemToCollection.Collection>
         <InArgument x:TypeArguments="scg:ICollection(x:String)">
           <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">questionList</CSharpValue>
@@ -159,29 +166,12 @@
         </scg:List>
       </uasc:AppendItemToCollection.Items>
     </uasc:AppendItemToCollection>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,202.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="388,92" sap2010:WorkflowViewState.IdRef="WriteLine_1">
-            <InArgument x:TypeArguments="x:String">
-              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">GlobalVariablesNamespace.GlobalVariables.docText</CSharpValue>
-            </InArgument>
-          </WriteLine>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ioa:ExtractAndRespond ContinueOnError="{x:Null}" SecretToken="{x:Null}" DisplayName="Ask GPT" Endpoint="https://staging.uipath.com/semanticproxy_/api/gptdu" sap:VirtualizedContainerService.HintSize="434,136" sap2010:WorkflowViewState.IdRef="ExtractAndRespond_3" TimeoutMS="60000">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="486.6666666666667,92" sap2010:WorkflowViewState.IdRef="WriteLine_3">
+      <InArgument x:TypeArguments="x:String">
+        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">asktGptQuestion</CSharpValue>
+      </InArgument>
+    </WriteLine>
+    <ioa:ExtractAndRespond ContinueOnError="{x:Null}" SecretToken="{x:Null}" DisplayName="Ask GPT" Endpoint="https://staging.uipath.com/semanticproxy_/api/gptdu" sap:VirtualizedContainerService.HintSize="486.6666666666667,136" sap2010:WorkflowViewState.IdRef="ExtractAndRespond_3" TimeoutMS="60000">
       <ioa:ExtractAndRespond.QuestionList>
         <InArgument x:TypeArguments="s:String[]">
           <CSharpValue x:TypeArguments="s:String[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">questionList.ToArray()</CSharpValue>
@@ -203,7 +193,7 @@
         </InArgument>
       </ioa:ExtractAndRespond.Text>
     </ioa:ExtractAndRespond>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,54" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486.6666666666667,326.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,246.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -237,12 +227,12 @@
       </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="486.6666666666667,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">askGptResponseText</CSharpReference>
@@ -254,12 +244,12 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="WriteLine_2">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="486.6666666666667,92" sap2010:WorkflowViewState.IdRef="WriteLine_2">
       <InArgument x:TypeArguments="x:String">
         <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">askGptResponseText</CSharpValue>
       </InArgument>
     </WriteLine>
-    <ufa:SetFormFieldsActivity DisplayName="Set Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,145.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
+    <ufa:SetFormFieldsActivity DisplayName="Set Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="486.6666666666667,145.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
       <ufa:SetFormFieldsActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="text-askgpt-answer">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">askGptResponseText</CSharpValue>

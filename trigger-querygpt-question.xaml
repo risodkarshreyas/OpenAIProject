@@ -3,7 +3,7 @@
     <x:Property Name="TriggerEventArgs" Type="InArgument(ufa:FormInfoTriggerEventArgs)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>910,878</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>854,936.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -39,6 +39,7 @@
       <x:String>UiPath.Studio.Forms.Runtime</x:String>
       <x:String>InternalLabs.OpenAI.Activities</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.IO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -85,9 +86,13 @@
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="trigger_querygpt_question" sap:VirtualizedContainerService.HintSize="496,813.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="trigger_querygpt_question" sap:VirtualizedContainerService.HintSize="496,1004" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="queryGptQuestion" />
       <Variable x:TypeArguments="x:String" Name="queryGptResponse" />
@@ -97,8 +102,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form trigger activity" Enabled="True" Event="click.btn-submit-querygpt-question" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,57.333333333333336" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="3869c6c4-d7e7-4d10-bd5c-0e2dff426866" />
-    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,174" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1" Result="{x:Null}">
+    <ufa:FormTriggerActivity x:TypeArguments="ufa:FormInfoTriggerEventArgs" MessageId="{x:Null}" Tag="{x:Null}" DisplayName="Form trigger activity" Enabled="True" Event="click.btn-submit-querygpt-question" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,166" sap2010:WorkflowViewState.IdRef="FormTriggerActivity`1_1" SchedulingMode="Sequential" TriggerId="3869c6c4-d7e7-4d10-bd5c-0e2dff426866" />
+    <ufa:GetFormFieldsActivity DisplayName="Get Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,145.33333333333334" sap2010:WorkflowViewState.IdRef="GetFormFieldsActivity_1">
       <ufa:GetFormFieldsActivity.Arguments>
         <OutArgument x:TypeArguments="x:String" x:Key="txt-query-gpt">
           <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">
@@ -130,7 +135,7 @@
           <ActivityAction.Argument4>
             <DelegateInArgument x:TypeArguments="x:String" Name="Model" />
           </ActivityAction.Argument4>
-          <ioa:Query ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,97" sap2010:WorkflowViewState.IdRef="Query_1" TimeoutMS="60000">
+          <ioa:Query ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,97.33333333333333" sap2010:WorkflowViewState.IdRef="Query_1" TimeoutMS="60000">
             <ioa:Query.Endpoint>
               <InArgument x:TypeArguments="x:String">
                 <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">Endpoint</CSharpValue>
@@ -165,7 +170,12 @@
         </ActivityAction>
       </ioa:OpenAIConnectionScope.Query>
     </ioa:OpenAIConnectionScope>
-    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,167" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+      <InArgument x:TypeArguments="x:String">
+        <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">queryGptResponse</CSharpValue>
+      </InArgument>
+    </WriteLine>
+    <ufa:SetFormFieldsActivity InstanceName="{x:Null}" DisplayName="Set Form Values" FormId="fd30828a-35e1-4090-b4b2-56d3fba6636a" sap:VirtualizedContainerService.HintSize="434,145.33333333333334" sap2010:WorkflowViewState.IdRef="SetFormFieldsActivity_1">
       <ufa:SetFormFieldsActivity.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="answerForGpt">
           <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">queryGptResponse</CSharpValue>
